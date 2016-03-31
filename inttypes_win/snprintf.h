@@ -3,6 +3,7 @@
 
 #if defined(_MSC_VER) && _MSC_VER < 1900
 
+//https://stackoverflow.com/questions/2915672/snprintf-and-visual-studio-2010
 #include <stdio.h>
 #include <stdarg.h>
 
