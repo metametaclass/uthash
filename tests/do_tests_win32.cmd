@@ -12,7 +12,7 @@ mkdir obj
 mkdir bin
 del /s /y obj\*
 del /s /y bin\*
-set "COMPILE=cl.exe /I ..\src /EHsc /Zi /nologo /Foobj\ /Febin\ /Fdbin\"
+set "COMPILE=cl.exe /I ..\src /I ..\inttypes_win /EHsc /Zi /nologo /Foobj\ /Febin\ /Fdbin\"
 echo compiling...
 %COMPILE% tdiff.cpp > compile.out
 ::for %%f in (test*.c) do %COMPILE% /Tp %%f >> compile.out
