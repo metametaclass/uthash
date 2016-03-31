@@ -3,10 +3,10 @@
 #include <fstream>
 using namespace std;
 int main(int argc, char *argv[] ) {
-  int rc=-1;
+  int rc=1;
   if (argc != 3) {
       cout << "usage: " << argv[0] << " file1 file2\n";
-      return -1;
+      return 2;
   }
   char *file1 = argv[1];
   char *file2 = argv[2];
