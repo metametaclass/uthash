@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "uthash.h"
+#include "snprintf.h"
 
 // this is an example of how to do a LRU cache in C using uthash
 // http://troydhanson.github.com/uthash/
