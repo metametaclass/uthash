@@ -10,6 +10,8 @@ typedef struct el {
     struct el *next, *prev;
 } el;
 
+#define TEST_DATA_FILE "test11.dat"
+
 static int namecmp(void *_a, void *_b)
 {
     el *a = (el*)_a;
@@ -25,9 +27,9 @@ int main(int argc, char *argv[])
     char linebuf[BUFLEN];
     FILE *file;
 
-    file = fopen( "test11.dat", "r" );
+    file = fopen( TEST_DATA_FILE, "r" );
     if (file == NULL) {
-        perror("can't open: ");
+        perror("can't open: " TEST_DATA_FILE);
         exit(-1);
     }
 
