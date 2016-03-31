@@ -1,7 +1,10 @@
 #include <string.h>
 #include <stdio.h>
 #include "uthash.h"
+//
+#if defined(_MSC_VER)
 #include "snprintf.h"
+#endif
 
 // this is an example of how to do a LRU cache in C using uthash
 // http://troydhanson.github.com/uthash/
