@@ -17,9 +17,9 @@ echo compiling...
 %COMPILE% tdiff.cpp > compile.out
 ::for %%f in (test*.c) do %COMPILE% /Tp %%f >> compile.out
 for %%f in (test*.c) do (
-  %COMPILE% /Tc %%f > compile.out
+  %COMPILE% /Tc %%f > bin\%%~nf.compile
   if ERRORLEVEL 1 (
-   type compile.out
+   type bin\%%~nf.compile
    goto error
   )
 )
