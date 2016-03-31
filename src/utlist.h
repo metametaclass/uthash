@@ -81,12 +81,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * namely, we always reassign our tmp variable to the list head if we need
  * to dereference its prev/next pointers, and save/restore the real head.*/
 #ifdef NO_DECLTYPE
-#define _SV(elt,list) _tmp = (char*)(list); {char **_alias = (char**)&(list); *_alias = (elt); }
+#define _SV(elt,list) { char *_tmp = (char*)(list); {char **_alias = (char**)&(list); *_alias = (elt); }
 #define _NEXT(elt,list,next) ((char*)((list)->next))
 #define _NEXTASGN(elt,list,to,next) { char **_alias = (char**)&((list)->next); *_alias=(char*)(to); }
 /* #define _PREV(elt,list,prev) ((char*)((list)->prev)) */
 #define _PREVASGN(elt,list,to,prev) { char **_alias = (char**)&((list)->prev); *_alias=(char*)(to); }
-#define _RS(list) { char **_alias = (char**)&(list); *_alias=_tmp; }
+#define _RS(list) { char **_alias = (char**)&(list); *_alias=_tmp; } }
 #define _CASTASGN(a,b) { char **_alias = (char**)&(a); *_alias=(char*)(b); }
 #else
 #define _SV(elt,list)
