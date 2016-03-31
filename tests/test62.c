@@ -12,18 +12,19 @@
 int main(int argc,char*argv[])
 {
     unsigned rc;
+    unsigned *al, *u1, *u2, *u3;
     char *c = malloc(8UL);
     if (c == NULL) {
         exit(-1);
     }
     *(c+0) = 0x00;
-    unsigned *al = (unsigned*)(c+0);
+    al = (unsigned*)(c+0);
     *(c+1) = 0x01;
-    unsigned *u1 = (unsigned*)(c+1);
+    u1 = (unsigned*)(c+1);
     *(c+2) = 0x02;
-    unsigned *u2 = (unsigned*)(c+2);
+    u2 = (unsigned*)(c+2);
     *(c+3) = 0x03;
-    unsigned *u3 = (unsigned*)(c+3);
+    u3 = (unsigned*)(c+3);
     *(c+4) = 0x04;
     *(c+5) = 0x05;
     *(c+6) = 0x06;
