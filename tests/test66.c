@@ -10,8 +10,10 @@ typedef struct person_t {
 
 int main(int argc, char*argv[])
 {
-    person_t *people=NULL, *person;
+    person_t *people=NULL, *person; 
+    person_t **p;
     const char **name;
+  
     const char * names[] = { "bob", "jack", "gary", "ty", "bo", "phil", "art",
                              "gil", "buck", "ted", NULL
                            };
@@ -29,7 +31,7 @@ int main(int argc, char*argv[])
     }
 
     person=NULL;
-    person_t **p=&person;
+    p=&person;
 
     for(name=names; *name!=NULL; name++) {
         HASH_FIND_STR(people,*name,*p);
